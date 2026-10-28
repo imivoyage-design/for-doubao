@@ -1,0 +1,1 @@
+{"cases":[{"id":1,"priority":"p0","description":"管理员登录后进入/admin页，切换到禁言管理Tab，能看到禁言列表"},{"id":2,"priority":"p0","description":"管理员对一个普通用户禁言（永久）→ 成功出现在禁言列表"},{"id":3,"priority":"p0","description":"管理员解除该用户禁言 → 从禁言列表消失"},{"id":4,"priority":"p1","description":"被禁言用户发帖被拦截"},{"id":5,"priority":"p1","description":"普通用户访问/admin被403拒绝或重定向"}]}

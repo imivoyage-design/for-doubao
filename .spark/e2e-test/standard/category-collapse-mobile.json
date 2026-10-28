@@ -1,0 +1,1 @@
+{"cases":[{"id":1,"priority":"p0","description":"移动端默认折叠：分类面板只显示标题栏+向下箭头，布局纵向堆叠"},{"id":2,"priority":"p0","description":"点击标题栏展开分类列表，箭头变为向上，能看到全部帖子和各分类按钮"},{"id":3,"priority":"p0","description":"选中一个分类后自动收起，标题栏显示选中分类名badge，帖子列表刷新"},{"id":4,"priority":"p1","description":"桌面端分类列表始终完整显示，无折叠箭头，点击分类正常切换"}]}

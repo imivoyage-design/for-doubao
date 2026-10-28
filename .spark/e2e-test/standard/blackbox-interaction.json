@@ -1,0 +1,1 @@
+{"cases": [{"id": 6, "priority": "p0", "description": "点赞帖子，点赞数+1，再次点击取消"}, {"id": 7, "priority": "p0", "description": "收藏帖子，收藏状态变化"}, {"id": 8, "priority": "p0", "description": "分类筛选：切换分类后帖子列表正确过滤"}, {"id": 9, "priority": "p0", "description": "修改昵称后，历史帖子和评论的作者名同步更新"}, {"id": 10, "priority": "p0", "description": "我的收藏列表中包含已收藏的帖子"}]}

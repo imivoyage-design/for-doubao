@@ -1,0 +1,13 @@
+import { Controller, Get } from '@nestjs/common';
+import { CategoriesService } from './categories.service';
+import type { Category } from '@shared/api.interface';
+
+@Controller('api/categories')
+export class CategoriesController {
+  constructor(private readonly categoriesService: CategoriesService) {}
+
+  @Get()
+  async findAll(): Promise<Category[]> {
+    return this.categoriesService.findAll();
+  }
+}

@@ -1,0 +1,1 @@
+{"cases":[{"id":1,"priority":"p0","description":"移动端默认状态：分类面板折叠，只显示标题栏+箭头+选中分类标记"},{"id":2,"priority":"p0","description":"点击分类标题栏展开列表，平滑动画过渡"},{"id":3,"priority":"p0","description":"选中一个分类后自动收起，列表刷新并露出帖子"},{"id":4,"priority":"p1","description":"桌面端（宽屏）分类列表始终完整显示，不受折叠状态影响"},{"id":5,"priority":"p1","description":"选中分类后，标题栏旁边显示该分类名badge"}]}

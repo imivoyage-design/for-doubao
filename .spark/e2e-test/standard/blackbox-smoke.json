@@ -1,0 +1,1 @@
+{"cases": [{"id": 1, "priority": "p0", "description": "游客打开首页，确认帖子列表和分类导航可见，且未登录状态正确"}, {"id": 2, "priority": "p0", "description": "游客打开帖子详情，确认正文和评论区可见，互动按钮提示登录"}, {"id": 3, "priority": "p0", "description": "新用户注册并登录，导航栏显示注册时填写的昵称"}, {"id": 4, "priority": "p0", "description": "发布新帖子后出现在列表中，作者名显示为昵称"}, {"id": 5, "priority": "p1", "description": "帖子详情页发评论，评论作者名显示为昵称"}]}
