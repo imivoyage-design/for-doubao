@@ -14,6 +14,8 @@ import { FavoritesModule } from './modules/favorites/favorites.module';
 import { AdminModule } from './modules/admin/admin.module';
 import { UsersModule } from './modules/users/users.module';
 import { AuthModule } from './modules/auth/auth.module';
+import { ReportsModule } from './modules/reports/reports.module';
+import { MessagesModule } from './modules/messages/messages.module';
 
 @Module({
   imports: [
@@ -29,6 +31,8 @@ import { AuthModule } from './modules/auth/auth.module';
     AdminModule,
     UsersModule,
     AuthModule,
+    ReportsModule,
+    MessagesModule,
     // ====== @route-section: business-modules END ======
 
     // ⚠️ @route-order: last

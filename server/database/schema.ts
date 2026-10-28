@@ -292,6 +292,48 @@ export const categories = pgTable("categories", {
   uniqueIndex("categories_name_key").on(table.name),
 ]);
 
+// ====== 后期扩展表（举报 / 私信）======
+
+// 举报：针对帖子或评论
+export const postReports = pgTable("post_reports", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  targetType: varchar("target_type", { length: 20 }).notNull(), // post / comment
+  targetId: uuid("target_id").notNull(),
+  reason: varchar("reason", { length: 50 }).notNull(), // spam/abuse/ad/other
+  description: varchar("description", { length: 500 }),
+  reporterId: userProfile("reporter_id").notNull(),
+  status: varchar("status", { length: 20 }).notNull().default('pending'), // pending/handled/ignored
+  handledBy: userProfile("handled_by"),
+  handledAt: customTimestamptz("handled_at", { precision: 3 }),
+  createdAt: customTimestamptz("_created_at", { precision: 3 }).notNull().default(sql`CURRENT_TIMESTAMP`),
+}, (table) => [
+  index("idx_post_reports_status").on(table.status),
+]);
+
+// 私信会话
+export const conversations = pgTable("conversations", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  userAId: userProfile("user_a_id").notNull(),
+  userBId: userProfile("user_b_id").notNull(),
+  lastMessageAt: customTimestamptz("last_message_at", { precision: 3 }),
+  createdAt: customTimestamptz("_created_at", { precision: 3 }).notNull().default(sql`CURRENT_TIMESTAMP`),
+}, (table) => [
+  index("idx_conversations_user_a").on(table.userAId),
+  index("idx_conversations_user_b").on(table.userBId),
+]);
+
+// 私信消息
+export const messages = pgTable("messages", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  conversationId: uuid("conversation_id").notNull(),
+  senderId: userProfile("sender_id").notNull(),
+  content: text("content").notNull(),
+  read: integer("read").notNull().default(0),
+  createdAt: customTimestamptz("_created_at", { precision: 3 }).notNull().default(sql`CURRENT_TIMESTAMP`),
+}, (table) => [
+  index("idx_messages_conversation").on(table.conversationId),
+]);
+
 // table aliases
 export const categoriesTable = categories;
 export const commentsTable = comments;
